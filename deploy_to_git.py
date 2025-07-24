@@ -78,8 +78,7 @@ def deploy_to_git():
     if not os.path.exists('index.html'):
         print("❌ Please run this script from the PlainTest directory")
         return False
-    
-    # Check Git status
+      # Check Git status
     is_git_repo, changes = check_git_status()
     
     if not is_git_repo:
@@ -92,7 +91,8 @@ def deploy_to_git():
         else:
             print("❌ Deployment cancelled")
             return False
-      # Check if there are any changes
+    
+    # Check if there are any changes
     if not changes:
         print("✅ No changes detected. Repository is up to date.")
         print("\nOptions:")
