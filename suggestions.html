@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Suggestion/Report Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 24px;
+    }
+    .form-container {
+      max-width: 420px;
+      margin: auto;
+      padding: 24px 32px;
+    }
+    h2 {
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 16px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px 8px;
+      margin-top: 6px;
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1em;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Suggestion / Report Form</h2>
+    <form id="suggestionReportForm">
+      <label for="type">Type:</label>
+      <select id="type" name="type" required>
+        <option value="">-- Please select --</option>
+        <option value="Suggestion">Suggestion</option>
+        <option value="Report">Report</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="5" placeholder="Describe your suggestion or report here..." required></textarea>
+
+      <label for="name">Your Name (optional):</label>
+      <input type="text" id="name" name="name" placeholder="Your name">
+
+      <label for="contact">Contact Information:</label>
+      <input type="text" id="contact" name="contact" placeholder="Email or phone number" required>
+
+      <button type="submit">Submit</button>
+    </form>
+    <div id="formMessage" style="margin-top:16px;text-align:center;"></div>
+  </div>
+  <script>
+    document.getElementById('suggestionReportForm').onsubmit = function(e) {
+      e.preventDefault();
+      // You can replace this with your actual form submission logic
+      document.getElementById('formMessage').innerHTML = 
+        '<span style="color:green">Thank you for your feedback! We will contact you if necessary.</span>';
+      this.reset();
+    };
+  </script>
+</body>
+</html>
