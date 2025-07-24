@@ -163,10 +163,18 @@ def deploy_to_git():
     if has_remote:
         print("🚀 Pushing to remote repository...")
         
-        # Get current branch
+        # Get current branch and ensure we're on main
         success, branch, _ = run_command("git branch --show-current")
-        if not success:
-            branch = "main"  # Default branch
+        if not success or branch.strip() != "main":
+            print("🔄 Switching to main branch...")
+            success, _, switch_error = run_command("git checkout main")
+            if not success:
+                # If main doesn't exist, create it
+                success, _, _ = run_command("git checkout -b main")
+                if not success:
+                    print(f"❌ Failed to switch to main branch: {switch_error}")
+                    return False
+            branch = "main"
         else:
             branch = branch.strip()
         
@@ -224,6 +232,20 @@ def deploy_to_git():
     success, url, _ = run_command("git remote get-url origin")
     if success and url.strip():
         print(f"🔗 Repository: {url.strip()}")
+    
+    # Footer with donation and contact options
+    print("\n" + "="*60)
+    print("🌟 Thank you for using PlainTest!")
+    print("="*60)
+    print("💝 Support the project:")
+    print("   • Donate: https://paypal.me/jaisuryaaman")
+    print("   • Sponsor: https://github.com/sponsors/jaisuryaaman")
+    print("📧 Contact & Support:")
+    print("   • Report bugs: https://github.com/jaisuryaaman/plaintest/issues")
+    print("   • Suggestions: plaintest.feedback@gmail.com")
+    print("   • Contact: hello@plaintest.me")
+    print("🌐 Website: https://plaintest.me")
+    print("="*60)
     
     return True
 
