@@ -73,7 +73,8 @@ def deploy_to_git():
     print("=" * 50)
     print("🚀 PlainTest Git Deployment")
     print("=" * 50)
-      # Check if we're in the correct directory
+    
+    # Check if we're in the correct directory
     if not os.path.exists('index.html'):
         print("❌ Please run this script from the PlainTest directory")
         return False
@@ -225,8 +226,7 @@ def deploy_to_git():
                     else:
                         print(f"❌ Failed to pull changes: {pull_error}")
                         return False
-                elif choice == "2":
-                    confirm = input("⚠️  Are you sure? This will overwrite remote repository (y/n): ")
+                elif choice == "2":                    confirm = input("⚠️  Are you sure? This will overwrite remote repository (y/n): ")
                     if confirm.lower() == 'y':
                         success, _, force_error = run_command(f"git push --force origin {branch}")
                         if success:
@@ -253,20 +253,7 @@ def deploy_to_git():
     success, url, _ = run_command("git remote get-url origin")
     if success and url.strip():
         print(f"🔗 Repository: {url.strip()}")
-    
-    # Footer with donation and contact options
-    print("\n" + "="*60)
-    print("🌟 Thank you for using PlainTest!")
-    print("="*60)
-    print("💝 Support the project:")
-    print("   • Donate: https://paypal.me/jaisuryaaman")
-    print("   • Sponsor: https://github.com/sponsors/jaisuryaaman")
-    print("📧 Contact & Support:")
-    print("   • Report bugs: https://github.com/jaisuryaaman/plaintest/issues")
-    print("   • Suggestions: https://plaintest.me/suggestions.html")
-    print("   • Contact: hello@plaintest.me")
-    print("🌐 Website: https://plaintest.me")
-    print("="*60)
+        print(f"🌐 Website: https://plaintest.me")
     
     return True
 
@@ -332,8 +319,7 @@ def main():
                 if not changes:
                     print("⚠️  No changes detected. Creating empty commit for republishing...")
                     success, _, _ = run_command(f'git commit --allow-empty -m "Update PlainTest - {timestamp}"')
-                else:
-                    # Run git commands for actual changes
+                else:                    # Run git commands for actual changes
                     run_command("git add .")
                     success, _, _ = run_command(f'git commit -m "Update PlainTest - {timestamp}"')
                 
@@ -341,19 +327,7 @@ def main():
                     success, _, _ = run_command("git push origin main")
                     if success:
                         print("✅ Quick deploy successful!")
-                        # Show the footer after successful quick deploy
-                        print("\n" + "="*60)
-                        print("🌟 Thank you for using PlainTest!")
-                        print("="*60)
-                        print("💝 Support the project:")
-                        print("   • Donate: https://paypal.me/jaisuryaaman")
-                        print("   • Sponsor: https://github.com/sponsors/jaisuryaaman")
-                        print("📧 Contact & Support:")
-                        print("   • Report bugs: https://github.com/jaisuryaaman/plaintest/issues")
-                        print("   • Suggestions: https://plaintest.me/suggestions.html")
-                        print("   • Contact: hello@plaintest.me")
-                        print("🌐 Website: https://plaintest.me")
-                        print("="*60)
+                        print("� Visit: https://plaintest.me")
                     else:
                         print("❌ Push failed - use option 1 for detailed deployment")
                 else:
