@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlainTest - Student Exam Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">        <header>
+            <h1>PlainTest</h1>
+            <p>Simple Online Exam Platform</p>
+        </header>
+        
+        <!-- Exam Selection -->
+        <div id="exam-selection" class="section">
+            <h2>Available Exams</h2>            <div id="exam-list">
+                <div class="no-exams-message">
+                    <h3>No Exams Available</h3>
+                    <p>Please add exam data to the script.js file or upload exam HTML files to get started.</p>
+                    <p>Use the test template in the tests/ folder as a reference for creating new exams.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exam Interface -->
+        <div id="exam-interface" class="section hidden">
+            <div class="exam-header">
+                <h2 id="exam-title"></h2>
+                <div class="exam-info">
+                    <span id="timer">Time Remaining: 30:00</span>
+                    <span id="question-counter">Question 1 of 10</span>
+                </div>
+            </div>
+
+            <div id="exam-content">
+                <div class="question-container">
+                    <h3 id="question-text"></h3>
+                    <div id="options-container"></div>
+                </div>
+                
+                <div class="exam-controls">
+                    <button id="prev-btn" onclick="previousQuestion()" disabled>Previous</button>
+                    <button id="next-btn" onclick="nextQuestion()">Next</button>
+                    <button id="submit-btn" onclick="submitExam()" class="hidden">Submit Exam</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results-section" class="section hidden">
+            <h2>Exam Results</h2>
+            <div id="score-display">
+                <h3 id="final-score"></h3>
+                <p id="score-percentage"></p>
+            </div>
+            
+            <div id="answer-review">
+                <h3>Answer Review</h3>
+                <div id="review-content"></div>
+            </div>            
+            <div class="results-controls">
+                <button onclick="downloadReport()">Download Report</button>
+                <button onclick="backToExams()">Take Another Exam</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

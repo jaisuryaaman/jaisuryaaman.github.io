@@ -1,0 +1,14 @@
+# PlainTest Admin Management Requirements
+# No external dependencies required - uses only Python standard library
+
+# Optional: For enhanced security features
+# cryptography==41.0.7
+# bcrypt==4.0.1
+
+# Note: The basic version uses hashlib (included in Python standard library)
+# For production use, consider implementing:
+# - Database storage instead of JSON files
+# - Enhanced password hashing (bcrypt/scrypt)
+# - Session management
+# - Audit logging
+# - Multi-factor authentication

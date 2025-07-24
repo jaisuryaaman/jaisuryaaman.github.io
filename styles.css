@@ -1,0 +1,309 @@
+/* PlainTest - Minimalistic Black and White Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    color: black;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1em;
+    font-style: italic;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-width: 3px;
+}
+
+/* Buttons */
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
+button:disabled {
+    background-color: white;
+    color: #666;
+    border-color: #666;
+    cursor: not-allowed;
+}
+
+button:disabled:hover {
+    background-color: white;
+    color: #666;
+}
+
+/* Exam Interface */
+
+/* Exam List */
+.exam-item {
+    border: 2px solid black;
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s;
+}
+
+.exam-item:hover {
+    background-color: #f0f0f0;
+}
+
+.exam-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.exam-item p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+/* Buttons */
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+.exam-header {
+    border-bottom: 2px solid black;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.exam-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.question-container {
+    margin-bottom: 30px;
+    min-height: 200px;
+}
+
+#question-text {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.option {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.option:hover {
+    background-color: #f0f0f0;
+}
+
+.option.selected {
+    background-color: black;
+    color: white;
+}
+
+.option input[type="radio"] {
+    margin-right: 10px;
+}
+
+.exam-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid black;
+    padding-top: 20px;
+}
+
+#submit-btn {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+#submit-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Results Section */
+#score-display {
+    text-align: center;
+    border: 2px solid black;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+#final-score {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#score-percentage {
+    font-size: 1.2em;
+}
+
+#answer-review {
+    border-top: 2px solid black;
+    padding-top: 20px;
+}
+
+.review-item {
+    border: 1px solid black;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.review-question {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.review-answer {
+    margin-bottom: 5px;
+}
+
+.correct-answer {
+    color: black;
+}
+
+.incorrect-answer {
+    color: #666;
+}
+
+.answer-status {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.correct {
+    border-left: 4px solid black;
+}
+
+.incorrect {
+    border-left: 4px solid #666;
+}
+
+.results-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Exam Selection */
+.no-exams-message {
+    text-align: center;
+    padding: 40px 20px;
+    border: 2px dashed #ccc;
+    background-color: #f9f9f9;
+    color: #666;
+}
+
+.no-exams-message h3 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.no-exams-message p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .exam-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .exam-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .results-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

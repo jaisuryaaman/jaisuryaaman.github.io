@@ -1,0 +1,9 @@
+# PlainTest - Files to ignore
+*.pyc
+__pycache__/
+.env
+.DS_Store
+Thumbs.db
+*.log
+admins.json
+credentials.js
