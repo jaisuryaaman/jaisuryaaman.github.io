@@ -92,39 +92,60 @@ def deploy_to_git():
         else:
             print("❌ Deployment cancelled")
             return False
-    
-    # Check if there are any changes
+      # Check if there are any changes
     if not changes:
         print("✅ No changes detected. Repository is up to date.")
-        return True
-    
-    print(f"📋 Found {len(changes)} changes:")
-    for change in changes[:10]:  # Show first 10 changes
-        print(f"   {change}")
-    if len(changes) > 10:
-        print(f"   ... and {len(changes) - 10} more changes")
-    
-    # Ask for commit message
-    print("\n📝 Enter commit message (or press Enter for auto-generated):")
-    commit_message = input("Message: ").strip()
-    
-    if not commit_message:
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        commit_message = f"Auto-update PlainTest - {timestamp}"
-    
-    # Add all changes
-    print("\n📦 Adding changes to Git...")
-    success, _, stderr = run_command("git add .")
-    if not success:
-        print(f"❌ Failed to add changes: {stderr}")
-        return False
-    
-    # Commit changes
-    print("💾 Committing changes...")
-    success, _, stderr = run_command(f'git commit -m "{commit_message}"')
-    if not success:
-        print(f"❌ Failed to commit changes: {stderr}")
-        return False
+        print("\nOptions:")
+        print("1. Force commit anyway (useful for republishing)")
+        print("2. Exit without changes")
+        
+        choice = input("Choose option (1-2): ").strip()
+        
+        if choice == "1":
+            print("🔄 Proceeding with force commit...")
+            # Ask for commit message
+            print("\n📝 Enter commit message:")
+            commit_message = input("Message: ").strip()
+            
+            if not commit_message:
+                timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                commit_message = f"Force update PlainTest - {timestamp}"
+            
+            # Create an empty commit to trigger push
+            success, _, stderr = run_command(f'git commit --allow-empty -m "{commit_message}"')
+            if not success:
+                print(f"❌ Failed to create commit: {stderr}")
+                return False
+        else:
+            return True
+    else:
+        print(f"📋 Found {len(changes)} changes:")
+        for change in changes[:10]:  # Show first 10 changes
+            print(f"   {change}")
+        if len(changes) > 10:
+            print(f"   ... and {len(changes) - 10} more changes")
+        
+        # Ask for commit message
+        print("\n📝 Enter commit message (or press Enter for auto-generated):")
+        commit_message = input("Message: ").strip()
+        
+        if not commit_message:
+            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            commit_message = f"Auto-update PlainTest - {timestamp}"
+        
+        # Add all changes
+        print("\n📦 Adding changes to Git...")
+        success, _, stderr = run_command("git add .")
+        if not success:
+            print(f"❌ Failed to add changes: {stderr}")
+            return False
+        
+        # Commit changes
+        print("💾 Committing changes...")
+        success, _, stderr = run_command(f'git commit -m "{commit_message}"')
+        if not success:
+            print(f"❌ Failed to commit changes: {stderr}")
+            return False
     
     # Check if remote origin exists
     success, stdout, _ = run_command("git remote get-url origin")
@@ -242,7 +263,7 @@ def deploy_to_git():
     print("   • Sponsor: https://github.com/sponsors/jaisuryaaman")
     print("📧 Contact & Support:")
     print("   • Report bugs: https://github.com/jaisuryaaman/plaintest/issues")
-    print("   • Suggestions: plaintest.feedback@gmail.com")
+    print("   • Suggestions: https://plaintest.me/suggestions.html")
     print("   • Contact: hello@plaintest.me")
     print("🌐 Website: https://plaintest.me")
     print("="*60)
@@ -305,17 +326,38 @@ def main():
                 timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
                 print(f"🚀 Quick deploying with message: 'Update PlainTest - {timestamp}'")
                 
-                # Run git commands directly
-                run_command("git add .")
-                success, _, _ = run_command(f'git commit -m "Update PlainTest - {timestamp}"')
+                # Check if there are changes first
+                is_git_repo, changes = check_git_status()
+                
+                if not changes:
+                    print("⚠️  No changes detected. Creating empty commit for republishing...")
+                    success, _, _ = run_command(f'git commit --allow-empty -m "Update PlainTest - {timestamp}"')
+                else:
+                    # Run git commands for actual changes
+                    run_command("git add .")
+                    success, _, _ = run_command(f'git commit -m "Update PlainTest - {timestamp}"')
+                
                 if success:
                     success, _, _ = run_command("git push")
                     if success:
                         print("✅ Quick deploy successful!")
+                        # Show the footer after successful quick deploy
+                        print("\n" + "="*60)
+                        print("🌟 Thank you for using PlainTest!")
+                        print("="*60)
+                        print("💝 Support the project:")
+                        print("   • Donate: https://paypal.me/jaisuryaaman")
+                        print("   • Sponsor: https://github.com/sponsors/jaisuryaaman")
+                        print("📧 Contact & Support:")
+                        print("   • Report bugs: https://github.com/jaisuryaaman/plaintest/issues")
+                        print("   • Suggestions: https://plaintest.me/suggestions.html")
+                        print("   • Contact: hello@plaintest.me")
+                        print("🌐 Website: https://plaintest.me")
+                        print("="*60)
                     else:
                         print("❌ Push failed - use option 1 for detailed deployment")
                 else:
-                    print("❌ No changes to commit")
+                    print("❌ No changes to commit or commit failed")
             else:
                 print("❌ Please run from PlainTest directory")
         elif choice == '4':
