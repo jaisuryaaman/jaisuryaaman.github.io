@@ -226,7 +226,8 @@ def deploy_to_git():
                     else:
                         print(f"❌ Failed to pull changes: {pull_error}")
                         return False
-                elif choice == "2":                    confirm = input("⚠️  Are you sure? This will overwrite remote repository (y/n): ")
+                elif choice == "2":
+                    confirm = input("⚠️  Are you sure? This will overwrite remote repository (y/n): ")
                     if confirm.lower() == 'y':
                         success, _, force_error = run_command(f"git push --force origin {branch}")
                         if success:
@@ -319,7 +320,8 @@ def main():
                 if not changes:
                     print("⚠️  No changes detected. Creating empty commit for republishing...")
                     success, _, _ = run_command(f'git commit --allow-empty -m "Update PlainTest - {timestamp}"')
-                else:                    # Run git commands for actual changes
+                else:
+                    # Run git commands for actual changes
                     run_command("git add .")
                     success, _, _ = run_command(f'git commit -m "Update PlainTest - {timestamp}"')
                 
@@ -327,7 +329,7 @@ def main():
                     success, _, _ = run_command("git push origin main")
                     if success:
                         print("✅ Quick deploy successful!")
-                        print("� Visit: https://plaintest.me")
+                        print("🌐 Visit: https://plaintest.me")
                     else:
                         print("❌ Push failed - use option 1 for detailed deployment")
                 else:
