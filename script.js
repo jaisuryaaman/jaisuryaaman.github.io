@@ -1,4 +1,4 @@
-// PlainTest - Exam Platform JavaScript
+// PlainTest - Exam Platform JavaScript - Last updated: July 24, 2025
 
 // Exam data - Add your exam data here
 const examData = {

@@ -1,6 +1,6 @@
 # PlainTest - Simple Online Exam Platform
 
-A minimalistic black and white exam platform where students can take tests anonymously and download their results.
+A minimalistic black and white exam platform where students can take tests anonymously and download their results. Last updated: July 24, 2025
 
 ## 🎯 Features
 

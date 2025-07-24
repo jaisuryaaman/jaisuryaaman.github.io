@@ -73,12 +73,12 @@ def deploy_to_git():
     print("=" * 50)
     print("🚀 PlainTest Git Deployment")
     print("=" * 50)
-    
-    # Check if we're in the correct directory
+      # Check if we're in the correct directory
     if not os.path.exists('index.html'):
         print("❌ Please run this script from the PlainTest directory")
         return False
-      # Check Git status
+    
+    # Check Git status
     is_git_repo, changes = check_git_status()
     
     if not is_git_repo:
@@ -338,7 +338,7 @@ def main():
                     success, _, _ = run_command(f'git commit -m "Update PlainTest - {timestamp}"')
                 
                 if success:
-                    success, _, _ = run_command("git push")
+                    success, _, _ = run_command("git push origin main")
                     if success:
                         print("✅ Quick deploy successful!")
                         # Show the footer after successful quick deploy
