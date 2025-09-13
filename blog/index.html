@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Debaditya's technology and AI blog articles - In-depth tutorials, insights, and analysis on modern technology topics.">
+    <meta name="keywords" content="technology blog, AI articles, machine learning tutorials, software development, programming guides">
+    <meta name="author" content="Debaditya">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://debaditya.me/blog/">
+    <meta property="og:title" content="Articles - debaditya.me">
+    <meta property="og:description" content="Explore technology and AI articles, tutorials, and insights for developers and tech enthusiasts.">
+    <meta property="og:image" content="https://debaditya.me/assets/images/debaditya-profile.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://debaditya.me/blog/">
+    <meta property="twitter:title" content="Articles - debaditya.me">
+    <meta property="twitter:description" content="Explore technology and AI articles, tutorials, and insights for developers and tech enthusiasts.">
+    <meta property="twitter:image" content="https://debaditya.me/assets/images/debaditya-profile.jpg">
+
+    <title>Articles - debaditya.me</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="../assets/css/style.css" as="style">
+    <link rel="preload" href="../assets/js/main.js" as="script">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="/" class="nav-brand">debaditya.me</a>
+                
+                <div class="nav-links">
+                    <a href="/blog/" class="nav-link">Blog</a>
+                    <a href="/about.html" class="nav-link">About</a>
+                    
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/debaditya" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/debaditya" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/debaditya" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <button class="dark-mode-toggle" aria-label="Toggle dark mode">🌙 Dark</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content-container" style="padding-top: 3rem; padding-bottom: 3rem;">
+        <header class="text-center mb-xl">
+            <h1>Articles</h1>
+            <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                Exploring the intersection of technology and innovation through in-depth analysis and practical tutorials.
+            </p>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-container" style="margin-bottom: 3rem; text-align: center;">
+            <input 
+                type="text" 
+                id="search-input" 
+                placeholder="Search articles..." 
+                style="width: 100%; max-width: 400px; padding: 0.75rem 1rem; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; background-color: var(--bg-primary); color: var(--text-primary);"
+            >
+        </div>
+
+        <!-- Articles List -->
+        <div id="articles-container">
+            <!-- Article 1 -->
+            <article class="article-card" style="display: flex; flex-direction: column; max-width: none; margin-bottom: 2rem;">
+                <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem;">
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <span class="article-category">Machine Learning</span>
+                            <span style="color: var(--text-secondary); font-size: 0.875rem;">September 10, 2024</span>
+                            <span style="color: var(--text-secondary); font-size: 0.875rem;">•</span>
+                            <span style="color: var(--text-secondary); font-size: 0.875rem;">5 min read</span>
+                        </div>
+                        <h2 class="article-title" style="font-size: 1.5rem; margin-bottom: 0.75rem;">
+                            <a href="understanding-ai-fundamentals.html" style="color: inherit; text-decoration: none;">
+                                Understanding AI Fundamentals: A Beginner's Guide
+                            </a>
+                        </h2>
+                        <p class="article-excerpt" style="margin-bottom: 1rem;">
+                            Explore the core concepts of artificial intelligence, from basic algorithms to neural networks. This comprehensive introduction covers everything you need to know to start your AI journey, including practical examples and real-world applications.
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                            <span style="background-color: var(--bg-secondary); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; color: var(--text-secondary);">#AI</span>
+                            <span style="background-color: var(--bg-secondary); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; color: var(--text-secondary);">#MachineLearning</span>
+                            <span style="background-color: var(--bg-secondary); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; color: var(--text-secondary);">#Beginners</span>
+                        </div>
+                        <a href="understanding-ai-fundamentals.html" style="color: var(--primary-color); font-weight: 500; text-decoration: none;">
+                            Read Full Article →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="article-card" style="display: flex; flex-direction: column; max-width: none; margin-bottom: 2rem;">
+                <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem;">
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <span class="article-category">Web Development</span>
+                            <span style="color: var(--text-secondary); font-size: 0.875rem;">September 5, 2024</span>
+                            <span style="color: var(--text-secondary); font-size: 0.875rem;">•</span>
+                            <span style="color: var(--text-secondary); font-size: 0.875rem;">8 min read</span>
+                        </div>
+                        <h2 class="article-title" style="font-size: 1.5rem; margin-bottom: 0.75rem;">
+                            <a href="modern-web-development-trends.html" style="color: inherit; text-decoration: none;">
+                                Modern Web Development: Trends Shaping 2024
+                            </a>
+                        </h2>
+                        <p class="article-excerpt" style="margin-bottom: 1rem;">
+                            Discover the latest trends in web development, from serverless architectures to progressive web apps and beyond. Learn about the tools and technologies that are revolutionizing how we build for the web.
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                            <span style="background-color: var(--bg-secondary); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; color: var(--text-secondary);">#WebDev</span>
+                            <span style="background-color: var(--bg-secondary); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; color: var(--text-secondary);">#JavaScript</span>
+                            <span style="background-color: var(--bg-secondary); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; color: var(--text-secondary);">#Trends</span>
+                        </div>
+                        <a href="modern-web-development-trends.html" style="color: var(--primary-color); font-weight: 500; text-decoration: none;">
+                            Read Full Article →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="article-card" style="display: flex; flex-direction: column; max-width: none; margin-bottom: 2rem;">
+                <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem;">
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <span class="article-category">Python</span>
+                            <span style="color: var(--text-secondary); font-size: 0.875rem;">August 28, 2024</span>
+                            <span style="color: var(--text-secondary); font-size: 0.875rem;">•</span>
+                            <span style="color: var(--text-secondary); font-size: 0.875rem;">6 min read</span>
+                        </div>
+                        <h2 class="article-title" style="font-size: 1.5rem; margin-bottom: 0.75rem;">
+                            <a href="python-automation-guide.html" style="color: inherit; text-decoration: none;">
+                                Automating Your Workflow with Python
+                            </a>
+                        </h2>
+                        <p class="article-excerpt" style="margin-bottom: 1rem;">
+                            Learn how to streamline repetitive tasks and boost productivity using Python's powerful automation capabilities. From file processing to web scraping, discover practical automation techniques.
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                            <span style="background-color: var(--bg-secondary); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; color: var(--text-secondary);">#Python</span>
+                            <span style="background-color: var(--bg-secondary); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; color: var(--text-secondary);">#Automation</span>
+                            <span style="background-color: var(--bg-secondary); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; color: var(--text-secondary);">#Productivity</span>
+                        </div>
+                        <a href="python-automation-guide.html" style="color: var(--primary-color); font-weight: 500; text-decoration: none;">
+                            Read Full Article →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="article-card" style="display: flex; flex-direction: column; max-width: none; margin-bottom: 2rem;">
+                <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem;">
+                    <div style="display: flex; flex-direction: column;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <span class="article-category">Data Science</span>
+                            <span style="color: var(--text-secondary); font-size: 0.875rem;">August 20, 2024</span>
+                            <span style="color: var(--text-secondary); font-size: 0.875rem;">•</span>
+                            <span style="color: var(--text-secondary); font-size: 0.875rem;">7 min read</span>
+                        </div>
+                        <h2 class="article-title" style="font-size: 1.5rem; margin-bottom: 0.75rem;">
+                            <a href="data-visualization-best-practices.html" style="color: inherit; text-decoration: none;">
+                                Data Visualization Best Practices for 2024
+                            </a>
+                        </h2>
+                        <p class="article-excerpt" style="margin-bottom: 1rem;">
+                            Master the art of telling stories with data through effective visualization techniques. Learn about modern tools, design principles, and common pitfalls to avoid.
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                            <span style="background-color: var(--bg-secondary); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; color: var(--text-secondary);">#DataScience</span>
+                            <span style="background-color: var(--bg-secondary); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; color: var(--text-secondary);">#Visualization</span>
+                            <span style="background-color: var(--bg-secondary); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; color: var(--text-secondary);">#Design</span>
+                        </div>
+                        <a href="data-visualization-best-practices.html" style="color: var(--primary-color); font-weight: 500; text-decoration: none;">
+                            Read Full Article →
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Search Results Container -->
+        <div id="search-results" style="margin-top: 2rem;"></div>
+
+        <!-- Load More Button -->
+        <div style="text-align: center; margin-top: 3rem;">
+            <button class="cta-button" onclick="loadMoreArticles()" style="background-color: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--border-color);">
+                Load More Articles
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about.html">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://linkedin.com/in/debaditya" target="_blank" rel="noopener">LinkedIn</a></li>
+                        <li><a href="https://github.com/debaditya" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://twitter.com/debaditya" target="_blank" rel="noopener">Twitter</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:hello[at]debaditya[dot]me" data-email="hello[at]debaditya[dot]me">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 debaditya.me. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Simple load more functionality
+        function loadMoreArticles() {
+            // In a real implementation, this would fetch more articles from an API
+            alert('More articles would be loaded here in a real implementation.');
+        }
+    </script>
+</body>
+</html>
